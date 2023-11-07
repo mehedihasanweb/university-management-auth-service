@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // testing
-app.get('/', (req: any, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Working Successfully')
 })
 
