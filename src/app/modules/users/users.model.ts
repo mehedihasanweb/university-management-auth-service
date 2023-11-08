@@ -4,21 +4,26 @@ import { IUser } from './users.interface'
 type userModel = Model<IUser, object>
 
 // user schema
-const userSchema = new Schema<IUser>({
-  id: {
-    type: String,
-    required: true,
-    unique: true,
+const userSchema = new Schema<IUser>(
+  {
+    id: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    role: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
-  role: {
-    type: String,
-    required: true,
+  {
+    timestamps: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-})
+)
 
 // user model
-export const user = model<IUser, userModel>('User', userSchema)
+export const User = model<IUser, userModel>('User', userSchema)
